@@ -28,7 +28,7 @@ for i in range(1,10001):
             print('recvfrom ' + str(addr) + ': ' + indata.decode())
             break
         except socket.timeout:
-            s.sendto(outdata, server_addr)
+            break
 time_stamp_2 = time.time()
 latency = time_stamp_2 - time_stamp_1
 print('Whole process cost '+ str(latency) + ' s')

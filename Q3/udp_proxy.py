@@ -48,7 +48,7 @@ while True:
             cnt = random.randint(1,10)
             if cnt == 1:
                 # drop
-                time.sleep(0.2)
+                # time.sleep(0.2)
                 print('proxy set drop packet')
                 PacketDrop = PacketDrop + 1
             else:
