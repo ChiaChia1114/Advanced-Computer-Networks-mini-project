@@ -24,9 +24,9 @@ sock_send.bind(('127.0.0.1', 5406))
 #         print('proxy send ' + outdata)
 
 # mini project 2
+PacketDrop = 0
+PacketDelay = 0
 while True:
-    PacketDrop = 0
-    PacketDelay = 0
     indata, addr = sock_send.recvfrom(2048)
     print('recvfrom ' + str(addr) + ': ' + indata.decode())
     msg = indata.decode().split()
@@ -56,9 +56,9 @@ while True:
                 sock_send.sendto(outdata.encode(), ('127.0.0.1', 5405))
                 print('proxy send ' + outdata)
 
-    if int(msg[1]) == 10000:
-        print('proxy drop packet for: ' + PacketDrop)
-        print('proxy delay 100ms packet for: ' + PacketDelay)
+    # if (int(msg[1]) == 10):
+        print('proxy drop packet for: ' + str(PacketDrop))
+        print('proxy delay 100ms packet for: ' + str(PacketDelay))
         # outdata = 'Hello ' + str(msg[1])
         # sock_send.sendto(outdata.encode(), ('127.0.0.1', 5405))
         # print('proxy send ' + outdata)
